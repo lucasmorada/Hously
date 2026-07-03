@@ -1,28 +1,415 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing Game Zé da Tipagem</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Typing Game 🔥</h1>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hously</title>
+    <meta
+      name="description"
+      content="Projetamos espaços que elevam o viver. Uma experiência arquitetônica refinada onde forma, luz e intenção se encontram."
+    />
+    <meta name="theme-color" content="#f7f6f2" />
+    <link rel="icon" href="public/images/hously-logo.svg" type="image/svg+xml" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header id="header" class="header">
+      <nav class="nav container">
+        <a href="#hero" class="nav-logo" data-scroll-top aria-label="Hously - início">
+          <img src="public/images/hously-logo.svg" alt="Hously" class="nav-logo-img" />
+        </a>
 
-        <div id="quoteDisplay" class="quote-display"></div>
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link">Início</a></li>
+          <li><a href="#about" class="nav-link">Filosofia</a></li>
+          <li><a href="#projects" class="nav-link">Projetos</a></li>
+          <li><a href="#services" class="nav-link">O que fazemos</a></li>
+          <li><a href="#faq" class="nav-link">Perguntas</a></li>
+        </ul>
 
-        <textarea id="quoteInput" class="quote-input" placeholder="Comece a digitar..." autofocus></textarea>
+        <a href="#contact" class="btn-contact">Fale conosco</a>
 
-        <div class="stats">
-            <span id="timer">Tempo: 0s</span>
-            <span id="wpm">WPM: 0</span>
-            <span id="accuracy">Acurácia: 0%</span>
+        <button id="menuToggle" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+          <svg class="icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <line x1="4" y1="8" x2="20" y2="8" />
+            <line x1="4" y1="16" x2="20" y2="16" />
+          </svg>
+          <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </nav>
+
+      <div id="mobileMenu" class="mobile-menu">
+        <div class="container">
+          <ul class="mobile-links">
+            <li><a href="#hero" class="mobile-link">Início</a></li>
+            <li><a href="#about" class="mobile-link">Filosofia</a></li>
+            <li><a href="#projects" class="mobile-link">Projetos</a></li>
+            <li><a href="#services" class="mobile-link">O que fazemos</a></li>
+            <li><a href="#faq" class="mobile-link">Perguntas</a></li>
+          </ul>
+          <a href="#contact" class="btn-contact mobile-contact">Fale conosco</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section id="hero" class="hero">
+        <div class="hero-bg">
+          <img src="public/images/hously-background.png" alt="Interior arquitetônico minimalista" />
         </div>
 
-        <button id="restartBtn" class="btn">Reiniciar</button>
-    </div>
+        <div id="heroContent" class="hero-content container">
+          <p class="hero-eyebrow">Estúdio de Arquitetura</p>
+          <h1 class="hero-title">
+            Projetamos espaços<br />
+            <span class="hero-title-accent">que elevam o viver</span>
+          </h1>
+        </div>
+
+        <div class="hero-fg">
+          <img src="public/images/hously-foreground.png" alt="Detalhe de ilha de cozinha em mármore" />
+        </div>
+
+        <div id="scrollHint" class="scroll-hint" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <polyline points="19 12 12 19 5 12" />
+          </svg>
+        </div>
+      </section>
+
+      <!-- PHILOSOPHY -->
+      <section id="about" class="section philosophy">
+        <div class="container philosophy-grid">
+          <div class="philosophy-left">
+            <p class="eyebrow">Nossa Filosofia</p>
+            <h2 class="heading-xl">
+              Projetar com<br />
+              <span class="highlight">intenção</span>
+            </h2>
+            <div class="philosophy-image">
+              <img src="public/images/exterior.png" alt="Esboço arquitetônico de espaço de trabalho" />
+            </div>
+          </div>
+
+          <div class="philosophy-right">
+            <p class="philosophy-intro">
+              Arquitetura é mais do que estrutura — é como experimentamos o mundo. Criamos espaços que nutrem o espírito humano.
+            </p>
+
+            <div class="philosophy-item reveal">
+              <span class="item-number">01</span>
+              <div>
+                <h3 class="item-title">Minimalista, não vazio</h3>
+                <p class="item-desc">Cada elemento tem propósito e espaço para respirar. Removemos o desnecessário para revelar o que realmente importa.</p>
+              </div>
+            </div>
+
+            <div class="philosophy-item reveal">
+              <span class="item-number">02</span>
+              <div>
+                <h3 class="item-title">Design guiado pela arquitetura</h3>
+                <p class="item-desc">Layouts inspirados em estrutura, ritmo e materialidade. Edifícios que falam através de proporção e luz.</p>
+              </div>
+            </div>
+
+            <div class="philosophy-item reveal">
+              <span class="item-number">03</span>
+              <div>
+                <h3 class="item-title">Movimento sutil</h3>
+                <p class="item-desc">O movimento apoia a experiência, nunca distrai. Um movimento que parece natural, como a luz mudando em um ambiente.</p>
+              </div>
+            </div>
+
+            <div class="philosophy-item reveal">
+              <span class="item-number">04</span>
+              <div>
+                <h3 class="item-title">Estética atemporal</h3>
+                <p class="item-desc">Uma linguagem visual elegante, calma e duradoura. Projetos que transcendem tendências e envelhecem com graça.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section projects">
+        <div class="container">
+          <div class="projects-header">
+            <div>
+              <p class="eyebrow">Trabalhos Selecionados</p>
+              <h2 class="heading-lg">Projetos em Destaque</h2>
+            </div>
+            <a href="#" class="link-arrow">
+              Ver todos os projetos
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card">
+              <div class="project-image reveal-image">
+                <img src="public/images/hously-1.png" alt="Villa Serena" />
+                <span class="project-cover"></span>
+              </div>
+              <div class="project-info">
+                <div>
+                  <h3 class="project-title">Villa Serena</h3>
+                  <p class="project-meta">Residencial · Malibu, Califórnia</p>
+                </div>
+                <span class="project-year">2024</span>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-image reveal-image">
+                <img src="public/images/hously-2.png" alt="O Pavilhão de Vidro" />
+                <span class="project-cover"></span>
+              </div>
+              <div class="project-info">
+                <div>
+                  <h3 class="project-title">O Pavilhão de Vidro</h3>
+                  <p class="project-meta">Comercial · Tóquio, Japão</p>
+                </div>
+                <span class="project-year">2023</span>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-image reveal-image">
+                <img src="public/images/hously-3.png" alt="Casa Terra" />
+                <span class="project-cover"></span>
+              </div>
+              <div class="project-info">
+                <div>
+                  <h3 class="project-title">Casa Terra</h3>
+                  <p class="project-meta">Residencial · Lisboa, Portugal</p>
+                </div>
+                <span class="project-year">2023</span>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-image reveal-image">
+                <img src="public/images/hously-4.png" alt="Refúgio Nórdico" />
+                <span class="project-cover"></span>
+              </div>
+              <div class="project-info">
+                <div>
+                  <h3 class="project-title">Refúgio Nórdico</h3>
+                  <p class="project-meta">Hospitalidade · Oslo, Noruega</p>
+                </div>
+                <span class="project-year">2024</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERTISE -->
+      <section id="services" class="section expertise">
+        <div class="container">
+          <div class="expertise-intro">
+            <p class="eyebrow">O que fazemos</p>
+            <h2 class="heading-xl">
+              <span class="highlight">Expertise</span> refinada<br />
+              pela prática
+            </h2>
+            <p class="expertise-lead">
+              Cada projeto se baseia em décadas de experiência coletiva, resultando em uma arquitetura ao mesmo tempo inovadora e atemporal.
+            </p>
+          </div>
+
+          <div class="expertise-grid">
+            <div class="expertise-item reveal">
+              <svg class="expertise-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+              <h3 class="item-title">Projetos Residenciais</h3>
+              <p class="item-desc">Criando lares que equilibram beleza e habitabilidade, onde cada espaço serve tanto à forma quanto à função.</p>
+            </div>
+
+            <div class="expertise-item reveal">
+              <svg class="expertise-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="2" width="16" height="20" rx="2" />
+                <path d="M9 22v-4h6v4" /><path d="M8 6h.01" /><path d="M16 6h.01" /><path d="M12 6h.01" /><path d="M12 10h.01" /><path d="M12 14h.01" /><path d="M16 10h.01" /><path d="M16 14h.01" /><path d="M8 10h.01" /><path d="M8 14h.01" />
+              </svg>
+              <h3 class="item-title">Arquitetura Comercial</h3>
+              <p class="item-desc">Projetando espaços de trabalho que inspiram produtividade e refletem os valores de organizações visionárias.</p>
+            </div>
+
+            <div class="expertise-item reveal">
+              <svg class="expertise-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 11a2 2 0 0 1 2 2v2h10v-2a2 2 0 0 1 4 0v6" />
+                <path d="M3 11V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6" />
+                <path d="M3 21v-4" /><path d="M7 15h10" />
+              </svg>
+              <h3 class="item-title">Arquitetura de Interiores</h3>
+              <p class="item-desc">Curando interiores que harmonizam com suas estruturas arquitetônicas, criando experiências espaciais coesas.</p>
+            </div>
+
+            <div class="expertise-item reveal">
+              <svg class="expertise-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 10v.2A3 3 0 0 1 8.9 16H5a3 3 0 0 1-1-5.8V10a3 3 0 0 1 6 0Z" />
+                <path d="M7 16v6" /><path d="M13 19v3" />
+                <path d="M12 19h8.3a1 1 0 0 0 .7-1.7L18 14h.3a1 1 0 0 0 .7-1.7L16 9h.2a1 1 0 0 0 .8-1.7L13 3l-1.4 1.5" />
+              </svg>
+              <h3 class="item-title">Planejamento Urbano</h3>
+              <p class="item-desc">Moldando comunidades por meio da integração cuidadosa entre espaços públicos, estruturas e elementos naturais.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="section faq">
+        <div class="container">
+          <div class="faq-header">
+            <p class="eyebrow">Perguntas Frequentes</p>
+            <h2 class="heading-xl">Perguntas e Respostas</h2>
+          </div>
+
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Onde ficam localizados os seus projetos?</span>
+                <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+              </button>
+              <div class="faq-answer">
+                <p>Embora nosso estúdio fique em São Francisco, trabalhamos em projetos por todo o norte da Califórnia e em locais selecionados em todo o país. Acreditamos em criar arquitetura que responde ao seu contexto e comunidade específicos.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Qual é o prazo do seu processo de design?</span>
+                <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+              </button>
+              <div class="faq-answer">
+                <p>Os prazos variam de acordo com o escopo e a complexidade. Um projeto residencial típico leva de 6 a 12 meses, do conceito inicial à documentação de construção. Trabalhamos de perto com os clientes para estabelecer prazos realistas que permitam um desenvolvimento cuidadoso do projeto.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Como vocês abordam o design sustentável?</span>
+                <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+              </button>
+              <div class="faq-answer">
+                <p>A sustentabilidade é parte integrante da nossa prática, não um complemento. Priorizamos estratégias de design passivo, seleção de materiais, eficiência energética e durabilidade. Cada projeto é concebido para minimizar o impacto ambiental e maximizar o conforto e a conexão com a natureza.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Quais serviços vocês oferecem?</span>
+                <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+              </button>
+              <div class="faq-answer">
+                <p>Oferecemos serviços de arquitetura completos, incluindo planejamento diretor, projeto esquemático, desenvolvimento de projeto, documentação de construção e administração de obra. Podemos adaptar nossos serviços às necessidades específicas do seu projeto.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Vocês trabalham com estruturas existentes?</span>
+                <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+              </button>
+              <div class="faq-answer">
+                <p>Com certeza. Gostamos do desafio de projetos de reuso adaptativo e reforma. Seja uma preservação histórica ou uma ampliação moderna, abordamos estruturas existentes com respeito, colocando-as em diálogo com o viver contemporâneo.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                <span>Como começamos?</span>
+                <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+              </button>
+              <div class="faq-answer">
+                <p>Começamos com uma consulta inicial na qual discutimos sua visão, terreno, orçamento e prazo. Isso nos ajuda a entender se somos a escolha certa para o seu projeto. A partir daí, elaboramos um escopo de trabalho personalizado e uma proposta de honorários.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CALL TO ACTION -->
+      <section id="contact" class="section cta">
+        <div class="container cta-inner">
+          <p class="cta-eyebrow">Inicie um Projeto</p>
+          <h2 class="cta-title">
+            Pronto para criar<br />
+            algo <span class="highlight">extraordinário</span>?
+          </h2>
+          <p class="cta-lead">
+            Vamos conversar sobre como podemos dar vida à sua visão. Todo grande espaço começa com uma conversa.
+          </p>
+          <div class="cta-actions">
+            <a href="mailto:ola@hously.com" class="btn-primary">
+              Começar a conversa
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+            </a>
+            <a href="tel:+551140028922" class="btn-outline">Agendar uma ligação</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="public/images/hously-logo.svg" alt="Hously" class="footer-logo" />
+            <p class="footer-desc">
+              Projetamos espaços que elevam o viver. Uma experiência arquitetônica refinada onde forma, luz e intenção se encontram.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer-title">Estúdio</h4>
+            <ul>
+              <li><a href="#projects">Projetos</a></li>
+              <li><a href="#about">Sobre</a></li>
+              <li><a href="#services">Serviços</a></li>
+              <li><a href="#contact">Contato</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer-title">Conecte-se</h4>
+            <ul>
+              <li><a href="mailto:ola@hously.com">ola@hously.com</a></li>
+              <li><a href="tel:+551140028922">+55 (11) 4002-8922</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2025 Hously. Todos os direitos reservados.</p>
+          <div class="footer-legal">
+            <a href="#">Privacidade</a>
+            <a href="#">Termos</a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
